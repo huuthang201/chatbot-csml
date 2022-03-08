@@ -1,0 +1,24 @@
+/* Always start the conversation with this step */
+start:
+  /* The bot knows the name of the user */
+  if (username) {
+    say "Hi {{username}}!"
+    say "It's nice to see you again."
+    goto end
+  }
+
+  /* This is the first time we speak with the user */
+  else {
+    say "Hello World!"
+    goto getname
+  }
+
+
+/* Step to retrieve the user's name */
+getname:
+  say OneOf(["What's your name?", "How do people call you?"])
+  hold
+
+  remember username = event
+  say "OK, I now know that your name is {{event}}."
+  goto end
