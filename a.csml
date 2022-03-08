@@ -1,0 +1,10 @@
+start:
+    say "hi!";
+    say "hi!";
+if (favorite_color eq "blue") {
+    say "hi!";
+    //do something
+} else {
+    //do something else
+    say "hi!";
+}
